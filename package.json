@@ -1,0 +1,30 @@
+{
+  "name": "ymb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:dev": "NODE_ENV=development npx mocha",
+    "test:prod": "npx mocha",
+    "test:test": "NODE_ENV=test npx mocha ",
+    "start": "node ./app/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "knex": "^0.95.4",
+    "mssql": "^6.3.1",
+    "node-schedule-tz": "^1.2.1-4",
+    "tedious": "^11.0.7"
+  },
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2"
+  }
+}
