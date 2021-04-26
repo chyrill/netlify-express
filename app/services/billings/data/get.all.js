@@ -11,6 +11,7 @@ module.exports = async() => {
                'dbo.Billings.B7 as FBA7'
                )
                .leftJoin('dbo.BillStatus', 'dbo.Billings.EStatus', 'dbo.BillStatus.SID')
+               .where({ 'dbo.Billings.EStatus': 1 })
             
             return result
     } catch(err) {
