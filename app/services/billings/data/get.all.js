@@ -1,3 +1,5 @@
+const moment = require('moment')
+
 module.exports = async() => {
     try {
            let result = await knex('dbo.Billings').select(
@@ -12,6 +14,7 @@ module.exports = async() => {
                )
                .leftJoin('dbo.BillStatus', 'dbo.Billings.EStatus', 'dbo.BillStatus.SID')
                .where({ 'dbo.Billings.EStatus': 1 })
+               .whereBetween('dbo.Billings.ODate', [new Date(moment(new Date()).subtract(1, 'day').startOf('day')), new Date(moment(new Date()).subtract(1, 'day').endOf('day'))])
             
             return result
     } catch(err) {
