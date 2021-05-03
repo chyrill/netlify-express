@@ -7,6 +7,7 @@ require('./scheduled-jobs')
 const app = express()
 
 const migrate = require('./services/migrate')
+const PORT = process.env.PORT || 3000
 
 require('./api')(app)
 
@@ -20,7 +21,7 @@ app.get('/migrate', async(req, res) => {
     res.send('Migrating files now . . . ')
 })
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log(`
     =======================================
     SCHEDULER IS WORKING . . . . 
