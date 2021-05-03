@@ -34,6 +34,6 @@ jobs:
       with:
         app-name: ymb
         slot-name: Production
-        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B680B2D0507D42909D46B078606F5B49 }}
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6FABEFC44E25413481492F3A226A39C8 }}
         package: .
 
