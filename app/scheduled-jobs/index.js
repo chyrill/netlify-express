@@ -1,10 +1,9 @@
 const cron = require('node-schedule-tz')
+const migrate = require('../services/migrate')
 
-const exportCSV = require('./export.fba.csv')
-
-cron.scheduleJob('* * 1 * * *', 'America/New_York', async() => {
-    await exportCSV()
+cron.scheduleJob('* * 1 * *', async() => {
+    console.log('migrating files . . . ')
+    await migrate()
 })
-
 
 module.exports = cron

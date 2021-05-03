@@ -7,21 +7,29 @@
     "test:dev": "NODE_ENV=development npx mocha",
     "test:prod": "npx mocha",
     "test:test": "NODE_ENV=test npx mocha ",
-    "start": "node ./app/index.js"
+    "start": "node ./app/index.js",
+    "init": "node ./bin/init",
+    "dev": "nodemon ./app/index.js",
+    "migrate": "npx knex migrate:latest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "csv-writer": "^1.6.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "joi": "^17.4.0",
     "knex": "^0.95.4",
     "moment": "^2.29.1",
     "mssql": "^6.3.1",
     "node-schedule-tz": "^1.2.1-4",
-    "tedious": "^11.0.7"
+    "nodemon": "^2.0.7",
+    "seriate": "^3.0.0",
+    "tedious": "^11.0.7",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "assert": "^2.0.0",

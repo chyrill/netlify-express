@@ -10,7 +10,7 @@ const defaultConfig = () => {
             require('dotenv').config()
             break
     }
-
+    const { APP_DB_HOST, APP_DB_NAME, APP_DB_USER, APP_DB_PASSWORD } = process.env
     return {
             databaseConfig: {
                 client: 'mssql',
@@ -28,7 +28,24 @@ const defaultConfig = () => {
                     }
                 }
             },
-            dropboxToken: process.env.DROPBOX_TOKEN
+            dropboxToken: process.env.DROPBOX_TOKEN,
+            databaseConfigYMB: {
+                client: 'mssql',
+                connection: {
+                    host: APP_DB_HOST ,
+                    database: APP_DB_NAME,
+                    user: APP_DB_USER ,
+                    password: APP_DB_PASSWORD,
+                    requestTimeout: 200000,
+                    options: {
+                        encrypt: true,
+                        useUTC: false,
+                        packetSize: 16384,
+                        enableArithAbort: true,
+                        tdsVersion: '7_1'
+                    }
+                }
+            }
     }
 }
 
